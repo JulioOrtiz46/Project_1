@@ -56,5 +56,5 @@ def car_menu(user):
             line()
             break
         else:
-            print('Invaled option, please enter a number between 1 and 4')
+            print('Invaled option, please enter a number between 1 and 10')
             print("")
