@@ -1,10 +1,7 @@
-#module that contains the methods that will login/delete/create users
+#module that contains the methods that will allow the user to buy a new car
 import car_options
 from print_options import line
-import upgrade_menu
-import garage_menu
 from car_options import get_car_attributes
-import print_options
 #this is going to print the menu, when called will diplay the contents of the dictionary menu_options
 
 def read_file():
