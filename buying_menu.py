@@ -4,6 +4,8 @@ from print_options import line
 from car_options import get_car_attributes
 #this is going to print the menu, when called will diplay the contents of the dictionary menu_options
 
+#this method will look at the text file that has the menu of cars
+#and will print it out
 def read_file():
     with open('listofcars.txt') as f:
         line = f.read()
@@ -12,14 +14,23 @@ def read_file():
         cleansed = cleansed.replace(':', ' ---')
         print(cleansed)
 
+#this is the method that will perfrom the attempt to buy a new car
 def buy_car(user,option):
+    #contain the attributes of the car the user would like to purchase
     car_shell = get_car_attributes(option)
+    #this will grab the current users balance,using the get_balanc command from car_options
     balance = car_options.get_balance(user) 
+    #this creates a variable that stores the value of the new car the user would like to purchase
     value = car_shell['value']
+    
+    #if statement to determine if the user can afford the new car
     if value < balance:
+                #if its is then it subtracts the price(value) from the balance
                 new_balance = balance - value
+                #adds the car to the users inventory
                 car_options.add_car(user,car_shell,new_balance) 
     else:
+        #if they dont then this prints out
         print("Not enough in balance")
         line()
               
@@ -38,27 +49,8 @@ def car_menu(user):
             print('Wrong input. please leave a number')
             print("")
         #checks the input option for one of the OPTIONS on the menu
-        if option == 1:
+        if 0 < option < 11:
             buy_car(user,option)  
-        elif option == 2:
-            buy_car(user,option)     
-        elif option == 3:
-            buy_car(user,option)  
-        elif option == 4:
-            buy_car(user,option)
-        elif option == 5:
-            buy_car(user,option)
-        elif option == 6:
-            buy_car(user,option)
-        elif option == 7:
-            buy_car(user,option)
-        elif option == 8:
-            buy_car(user,option)
-        elif option == 9:
-            buy_car(user,option)
-        elif option == 10:
-            car_shell = get_car_attributes(option)  
-            car_options.add_car(user,car_shell)  
         elif option == 11:
             print('Exiting...')
             line()
