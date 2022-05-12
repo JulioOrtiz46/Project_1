@@ -1,5 +1,5 @@
 # Project_1
-This is a car customization project, this porject is a car customization project
+This is a car customization project
 in this project you can:
 customize a vehicle of your choosing
 Works with 3 MongoDB collections and python
